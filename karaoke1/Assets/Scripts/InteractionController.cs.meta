@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:karaoke1/Assets/Scripts/InteractionController.cs.meta
 guid: 30b15967190a13f44a001525a01e0cc7
+========
+guid: b2a60a27d68fa164c81ff6011c22cc15
+>>>>>>>> 33d8184a9d753fdff4951cd09aedacc089af0449:karaoke1/Assets/Scripts/CameraHolderScript.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
