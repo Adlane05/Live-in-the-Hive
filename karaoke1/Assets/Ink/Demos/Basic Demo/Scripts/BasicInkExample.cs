@@ -10,7 +10,7 @@ public class BasicInkExample : MonoBehaviour {
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
-		StartStory();
+		//StartStory();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
