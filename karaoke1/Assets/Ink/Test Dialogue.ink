@@ -1,3 +1,4 @@
+VAR friendship = 0 
 ->ShaunaStart
 === ShaunaStart ===
 #name Shauna
@@ -16,10 +17,14 @@ what is your deal do you just not like fun?
 that i can fw 
 you now have friendship points with me
 #friend 1
+~ friendship +=1
+Ok Byeeeee!!!!
 ->END
 *[no i love fun youre just boring]
 fuck you you no longer have friendship points with me
 #friend -1
+~ friendship -=1
+Ok Byeeeee!!!!
 ->END
 
 == visit2 ==
