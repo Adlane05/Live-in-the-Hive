@@ -9,21 +9,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
-
+    public static bool  isInDialogue = false;
     public static DialogueManager Instance;
     public GameObject textBox;
     public GameObject customButton;
     public GameObject twoOptionPanel;
     public GameObject fourOptionPanel;
     public bool isTalking = false;
-    static Story story;
+    public static Story story;
     Text nametag;
     Text message;
     List<string> tags;
-    static Choice choiceSelected;
     bool storyStarted = false;
     int numberOfChoices;
     GameObject character;
+    CharResources resources;
 
     void Awake()
     {
@@ -35,10 +35,10 @@ public class DialogueManager : MonoBehaviour
         {
             character = chara;
             story = new Story(otherinkJSONAsset.text);
+            story.variablesState["friendship"] = chara.GetComponent<CharResources>().friendshipPoints;
             nametag = textBox.transform.GetChild(0).GetComponent<Text>();
             message = textBox.transform.GetChild(1).GetComponent<Text>();
             tags = new List<string>();
-            choiceSelected = null;
             storyStarted = true;
             StartStory();
         }
@@ -60,7 +60,6 @@ public class DialogueManager : MonoBehaviour
             nametag = textBox.transform.GetChild(0).GetComponent<Text>();
             message = textBox.transform.GetChild(1).GetComponent<Text>();
             tags = new List<string>();
-            choiceSelected = null;
             storyStarted = true;
             story.ChoosePathString(Knotname);
             StartStory();
@@ -82,6 +81,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.canContinue)
         {
+            isInDialogue = true;
             string currentSentence = story.Continue();
             ParseTags();
             StopAllCoroutines();
@@ -117,12 +117,15 @@ public class DialogueManager : MonoBehaviour
                     if(int.Parse(param) > 0)
                     {
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[2];
+                        //Debug.Log("canContinue"+ story.canContinue);
                         Invoke("ReturnToOriginal", 1);
+                        //Debug.Log("AfterInvoke");
                     }
+                    
                     if(int.Parse(param) < 0)
                     {        
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[1];
-                        Invoke("ReturnToOriginal", 1);                    
+                        //Invoke("ReturnToOriginal", 1);                    
                     }
                     break;
             }
@@ -183,6 +186,9 @@ public class DialogueManager : MonoBehaviour
     }
     void FinishDialogue()
     {
+        character.GetComponent<CharResources>().friendshipPoints = (int) story.variablesState["friendship"];
+        Debug.Log("FinishDialogue");
+        isInDialogue = false;
         textBox.SetActive(false);
         storyStarted = false;
         Cursor.visible = false;

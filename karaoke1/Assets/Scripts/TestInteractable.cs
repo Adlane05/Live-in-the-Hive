@@ -17,8 +17,8 @@ public class TestInteractable : MonoBehaviour, IInteractable
     chara = this.gameObject;
 }
     public void Interact()
-    {
+    {if(!DialogueManager.isInDialogue){
         UnityEngine.Debug.Log("im dead now thanks");
         DialogueManager.Instance.StartStory(chara, inkJSONAsset);
     }
-}
+}}

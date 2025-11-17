@@ -2,7 +2,7 @@ using System;
 using Ink.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.AI;
 public class OtherNpcInteractable : MonoBehaviour, IInteractable
 {
     public string InteractMessage => objectInteractableMessage;
@@ -18,6 +18,9 @@ public class OtherNpcInteractable : MonoBehaviour, IInteractable
 }
     public void Interact()
     {
+        //GetComponentInParent<SimpleRoam>().enabled = (false);
+        //GetComponentInParent<NavMeshAgent>().destination = transform.position;
+        if(!DialogueManager.isInDialogue){
         if (numberOfInteractions == 0)
         {
             DialogueManager.Instance.StartStory(chara, inkJSONAsset);
@@ -32,5 +35,6 @@ public class OtherNpcInteractable : MonoBehaviour, IInteractable
             DialogueManager.Instance.StartStory(chara, inkJSONAsset, "visit3");
         }
         numberOfInteractions++;
+        }
     }
 }
