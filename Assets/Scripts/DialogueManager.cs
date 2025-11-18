@@ -117,15 +117,13 @@ public class DialogueManager : MonoBehaviour
                     if(int.Parse(param) > 0)
                     {
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[2];
-                        //Debug.Log("canContinue"+ story.canContinue);
                         Invoke("ReturnToOriginal", 1);
-                        //Debug.Log("AfterInvoke");
                     }
                     
                     if(int.Parse(param) < 0)
                     {        
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[1];
-                        //Invoke("ReturnToOriginal", 1);                    
+                        Invoke("ReturnToOriginal", 1);                    
                     }
                     break;
             }

@@ -18,8 +18,8 @@ public class OtherNpcInteractable : MonoBehaviour, IInteractable
 }
     public void Interact()
     {
-        //GetComponentInParent<SimpleRoam>().enabled = (false);
-        //GetComponentInParent<NavMeshAgent>().destination = transform.position;
+        GetComponentInParent<SimpleRoam>().enabled = (false);
+        GetComponentInParent<NavMeshAgent>().destination = transform.position;
         if(!DialogueManager.isInDialogue){
         if (numberOfInteractions == 0)
         {
