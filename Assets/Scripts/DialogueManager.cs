@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Linq;
 public class DialogueManager : MonoBehaviour
 {
     public static bool  isInDialogue = false;
@@ -35,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         {
             character = chara;
             story = new Story(otherinkJSONAsset.text);
-            story.variablesState["friendship"] = chara.GetComponent<CharResources>().friendshipPoints;
+            //story.variablesState["friendship"] = chara.GetComponent<CharResources>().friendshipPoints;
             nametag = textBox.transform.GetChild(0).GetComponent<Text>();
             message = textBox.transform.GetChild(1).GetComponent<Text>();
             tags = new List<string>();
@@ -102,30 +103,46 @@ public class DialogueManager : MonoBehaviour
         tags = story.currentTags;
         foreach (string t in tags)
         {
-            string prefix = t.Split(' ')[0];
-            string param = t.Split(' ')[1];
+            string[] parts = t.Split(' ');
 
-            switch (prefix.ToLower())
-            {
-                case "level":
-                    SceneManager.LoadScene(param);
-                    break;
-                case "name":
-                    nametag.text = param;
-                    break;
+            if (parts.Length == 0)
+            continue;
+
+            string prefix = parts[0].ToLower();
+
+            // Everything after the prefix is parameters
+            string[] parameters = parts.Skip(1).ToArray();
+
+            switch (prefix)
+        {
+            case "level":
+                if (parameters.Length >= 1)
+                    SceneManager.LoadScene(parameters[0]);
+                break;
+
+            case "name":
+                if (parameters.Length >= 1)
+                    nametag.text = parameters[0];
+                break;
+
+
                 case "friend":
-                    if(int.Parse(param) > 0)
+                    if(int.Parse(parameters[0]) > 0)
                     {
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[2];
                         Invoke("ReturnToOriginal", 1);
                     }
                     
-                    if(int.Parse(param) < 0)
+                    if(int.Parse(parameters[0]) < 0)
                     {        
                         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[1];
                         Invoke("ReturnToOriginal", 1);                    
                     }
                     break;
+                    case "texture":
+                    if(parameters[0] == "shauna"){
+                        InformationManager.Instance.shaunaSprites[1]
+                    }
             }
         }
     }
@@ -184,7 +201,6 @@ public class DialogueManager : MonoBehaviour
     }
     void FinishDialogue()
     {
-        character.GetComponent<CharResources>().friendshipPoints = (int) story.variablesState["friendship"];
         Debug.Log("FinishDialogue");
         isInDialogue = false;
         textBox.SetActive(false);
