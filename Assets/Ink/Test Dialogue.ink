@@ -16,12 +16,12 @@ what is your deal do you just not like fun?
 *[yeah]
 that i can fw 
 you now have friendship points with me
-#friend 1
+#texture shauna 1 1
 Ok Byeeeee!!!!
 ->END
 *[no i love fun youre just boring]
 fuck you you no longer have friendship points with me
-#friend -1
+#texture shauna 2 1
 Ok Byeeeee!!!!
 ->END
 

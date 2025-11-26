@@ -24,16 +24,16 @@ public class OtherNpcInteractable : MonoBehaviour, IInteractable
         if(!DialogueManager.isInDialogue){
         if (numberOfInteractions == 0)
         {
-            DialogueManager.Instance.StartStory(chara, inkJSONAsset);
+            DialogueManager.Instance.StartStory(inkJSONAsset);
         }
         else if (numberOfInteractions == 1)
         {
-            DialogueManager.Instance.StartStory(chara, inkJSONAsset, "visit2");
+            DialogueManager.Instance.StartStory(inkJSONAsset, "visit2");
 
         }
         else if (numberOfInteractions == 2)
         {
-            DialogueManager.Instance.StartStory(chara, inkJSONAsset, "visit3");
+            DialogueManager.Instance.StartStory(inkJSONAsset, "visit3");
         }
         numberOfInteractions++;
         }

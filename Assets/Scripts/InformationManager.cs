@@ -5,6 +5,16 @@ using UnityEngine;
 public class InformationManager : MonoBehaviour
 {
    public static InformationManager Instance;
-   int ShaunaFriendship;
-   public Sprite[] shaunaSprites;
+   public GameObject Shauna;
+   public CharResources ShaunaResources;
+
+   void Awake()
+    {
+        Instance = this;
+        Shauna = GameObject.Find("Shauna");
+        ShaunaResources = Shauna.GetComponent<CharResources>();
+
+        Debug.Log(Shauna);
+
+    }
 }

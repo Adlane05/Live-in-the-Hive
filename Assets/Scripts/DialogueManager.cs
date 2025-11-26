@@ -30,11 +30,11 @@ public class DialogueManager : MonoBehaviour
     {
         Instance = this;
     }
-    public void StartStory(GameObject chara, TextAsset otherinkJSONAsset)
+    public void StartStory(TextAsset otherinkJSONAsset)
     {
         if (!storyStarted)
         {
-            character = chara;
+            
             story = new Story(otherinkJSONAsset.text);
             //story.variablesState["friendship"] = chara.GetComponent<CharResources>().friendshipPoints;
             nametag = textBox.transform.GetChild(0).GetComponent<Text>();
@@ -52,11 +52,10 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         AdvanceDialogue();
     }
-    public void StartStory(GameObject chara, TextAsset otherinkJSONAsset, string Knotname)
+    public void StartStory( TextAsset otherinkJSONAsset, string Knotname)
     {
         if (!storyStarted)
         {
-            character = chara;
             story = new Story(otherinkJSONAsset.text);
             nametag = textBox.transform.GetChild(0).GetComponent<Text>();
             message = textBox.transform.GetChild(1).GetComponent<Text>();
@@ -124,25 +123,15 @@ public class DialogueManager : MonoBehaviour
                 if (parameters.Length >= 1)
                     nametag.text = parameters[0];
                 break;
+            case "texture":
+                if(parameters[0] == "shauna"){
+                        character = InformationManager.Instance.Shauna;
+                                Debug.Log(character);
 
-
-                case "friend":
-                    if(int.Parse(parameters[0]) > 0)
-                    {
-                        character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[2];
-                        Invoke("ReturnToOriginal", 1);
-                    }
-                    
-                    if(int.Parse(parameters[0]) < 0)
-                    {        
-                        character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[1];
-                        Invoke("ReturnToOriginal", 1);                    
-                    }
+                        character.GetComponent<MeshRenderer>().material = InformationManager.Instance.ShaunaResources.sprites[int.Parse(parameters[1])];
+                        Invoke("ReturnToOriginal", float.Parse(parameters[2]));
+                 }
                     break;
-                    case "texture":
-                    if(parameters[0] == "shauna"){
-                        InformationManager.Instance.shaunaSprites[1]
-                    }
             }
         }
     }
