@@ -125,10 +125,11 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "texture":
                 if(parameters[0] == "shauna"){
-                        character = InformationManager.Instance.Shauna;
+                        /*character = InformationManager.Instance.Shauna;
                                 Debug.Log(character);
 
                         character.GetComponent<MeshRenderer>().material = InformationManager.Instance.ShaunaResources.sprites[int.Parse(parameters[1])];
+                        */
                         Invoke("ReturnToOriginal", float.Parse(parameters[2]));
                  }
                     break;
@@ -197,8 +198,8 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void ReturnToOriginal()
+    /*void ReturnToOriginal()
     {
         character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[0];
-    }
+    }*/
 }

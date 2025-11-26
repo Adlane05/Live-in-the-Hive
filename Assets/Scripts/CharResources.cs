@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class CharResources : MonoBehaviour
 {
-    public int friendshipPoints = 0;
-    public string CharacterID = "";
-    public Material[] sprites;
+    public FriendshipStruct info;
+    public string name;
 
     public void Start()
     {
-        
+        info = InformationManager.Instance.GetFriendshipStruct(name);
     }
 }

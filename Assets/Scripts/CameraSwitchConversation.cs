@@ -1,27 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraSwitchConversation : MonoBehaviour
 {
-    private Transform startPoint;
-    public Transform endPoint;
+    [Header("Transforms")]
+    public Transform target;
 
-    public  Vector3 velocity = new Vector3(0,0,0);
-    public float movementTime= 15f;
-    public float timeCount = 0.0f;
-    // Start is called before the first frame update
+    [Header("Timing")]
+    public float moveDuration = 15f;
+
+    private float timer = 0f;
+    private bool isMoving = false;
+    private Transform origin;
     void Start()
     {
-        startPoint = transform;
+        StartMove();
     }
 
-    // Update is called once per frame
+    public void StartMove()
+    {
+        origin = transform;
+        timer = 0f;
+        isMoving = true;
+    }
+
     void Update()
     {
-        timeCount += Time.deltaTime;
-        float t = Mathf.Clamp01(timeCount / movementTime);
-        transform.position = Vector3.SmoothDamp(startPoint.position, endPoint.position, ref velocity, movementTime);
-        transform.rotation = Quaternion.Slerp(startPoint.rotation, endPoint.rotation, t);
+        if (!isMoving) return;
+
+        timer += Time.deltaTime;
+        float t = Mathf.SmoothStep(0f, 1f, timer / moveDuration);
+
+        // Position Lerp
+        transform.position = Vector3.Lerp(origin.position, target.position, t);
+
+        // Rotation Slerp
+        transform.rotation = Quaternion.Slerp(origin.rotation, target.rotation, t);
+
+        if (t >= 1f)
+        {
+            transform.position = target.position;
+            transform.rotation = target.rotation;
+            isMoving = false;
+        }
     }
 }
