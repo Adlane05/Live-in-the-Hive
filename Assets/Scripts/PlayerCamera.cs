@@ -19,6 +19,9 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
+        if (DialogueManager.isInDialogue )
+        {   return;
+        }
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensitivityX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensitivityY;
 

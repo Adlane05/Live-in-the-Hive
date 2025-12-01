@@ -36,6 +36,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void Update()
     {
+        
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
@@ -62,6 +63,8 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void MovePlayer()
     {
+        if(DialogueManager.isInDialogue)
+            return;
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 

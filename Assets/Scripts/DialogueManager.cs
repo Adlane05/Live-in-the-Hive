@@ -111,31 +111,34 @@ public class DialogueManager : MonoBehaviour
 
             // Everything after the prefix is parameters
             string[] parameters = parts.Skip(1).ToArray();
-
+            Debug.Log("Prefix "+ prefix);
+            Debug.Log("Parameters " + parameters[0]);
             switch (prefix)
-        {
-            case "level":
-                if (parameters.Length >= 1)
-                    SceneManager.LoadScene(parameters[0]);
-                break;
-
-            case "name":
-                if (parameters.Length >= 1)
-                    nametag.text = parameters[0];
-                break;
-            case "texture":
-                if(parameters[0] == "shauna"){
-                        /*character = InformationManager.Instance.Shauna;
-                                Debug.Log(character);
-
-                        character.GetComponent<MeshRenderer>().material = InformationManager.Instance.ShaunaResources.sprites[int.Parse(parameters[1])];
-                        */
-                        Invoke("ReturnToOriginal", float.Parse(parameters[2]));
-                 }
+            {
+                case "level":
+                    if (parameters.Length >= 1)
+                        SceneManager.LoadScene(parameters[0]);
                     break;
+
+                case "name":
+                    if (parameters.Length >= 1)
+                        nametag.text = parameters[0];
+                    break;
+                case "playhappy":
+                {
+                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(parameters[0]);
+                        if (friendStruct != null)
+                        {
+                            friendStruct.character.GetComponent<Animator>().SetTrigger("playHappy");
+                        }
+                    
+                        break;
+                }
+                       
             }
         }
     }
+    
 
     IEnumerator TypeSentence(string sentence)
     {
