@@ -16,7 +16,8 @@ public class InformationManager : MonoBehaviour
    public static InformationManager Instance;
     [SerializeField]
     public FriendshipStruct[] friendshipDictionary;
-    public String StandChoice = "null"
+    public String StandChoice = "null";
+    public String[] Inventory = new String[3];
    void Awake()
     {
         Instance = this;

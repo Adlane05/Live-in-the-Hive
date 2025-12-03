@@ -16,7 +16,7 @@ public class downController : MonoBehaviour
         }
         isNoteHit = false;
     }
-    
+
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Down"))
@@ -27,14 +27,14 @@ public class downController : MonoBehaviour
                 counterController.Instance.Score--;
                 isNoteHit = false;
             }
-            
+
         }
     }
     void Update()
     {
         Vector3 movement = new Vector3(0, speed, 0);
         transform.position += Time.deltaTime * movement;
-        if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.DownArrow))
+        if (!isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
             Debug.Log("hit down");
@@ -43,7 +43,7 @@ public class downController : MonoBehaviour
 
         }
 
-        if (isInTrigger == false && Input.GetKeyDown(KeyCode.DownArrow))
+        if (isInTrigger == false && Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
             Debug.Log("Down failed");

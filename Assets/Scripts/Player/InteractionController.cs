@@ -11,6 +11,7 @@ public class InteractionController : MonoBehaviour
     Text interactionText;
     [SerializeField]
     float interactionDistance = 5f;
+    bool hasInteractedWhileLooking = false;
 
     IInteractable currentTargetedInteractable;
 
@@ -24,26 +25,47 @@ public class InteractionController : MonoBehaviour
     }
 
     void UpdateCurrentInteractable()
-    {
-        var ray = playerCamera.ViewportPointToRay(new UnityEngine.Vector2(0.5f, 0.5f));
-        Physics.Raycast(ray, out var hit, interactionDistance);
-        currentTargetedInteractable = hit.collider?.GetComponent<IInteractable>();
-    }
-    void UpdateInteractionText()
-    {
-        if (currentTargetedInteractable == null)
-        {
-            interactionText.text = string.Empty;
-            return;
-        }
+{
+    var ray = playerCamera.ViewportPointToRay(new UnityEngine.Vector2(0.5f, 0.5f));
+    Physics.Raycast(ray, out var hit, interactionDistance);
 
-        interactionText.text = currentTargetedInteractable.InteractMessage;
-    }
-    void CheckForInteractionInput()
+    var newTarget = hit.collider?.GetComponent<IInteractable>();
+
+    if (newTarget != currentTargetedInteractable)
     {
-        if (Input.GetKeyDown(KeyCode.E) && currentTargetedInteractable != null)
-        {
-            currentTargetedInteractable.Interact();
-        }
+        hasInteractedWhileLooking = false;
     }
+
+    currentTargetedInteractable = newTarget;
+}
+
+    void UpdateInteractionText()
+{
+    if (currentTargetedInteractable == null)
+    {
+        interactionText.text = string.Empty;
+        return;
+    }
+
+    if (hasInteractedWhileLooking)
+    {
+        interactionText.text = string.Empty;
+        return;
+    }
+
+    interactionText.text = currentTargetedInteractable.InteractMessage;
+}
+
+    void CheckForInteractionInput()
+{
+    if (Input.GetKeyDown(KeyCode.E) && currentTargetedInteractable != null)
+    {
+        currentTargetedInteractable.Interact();
+
+        hasInteractedWhileLooking = true;
+
+        interactionText.text = string.Empty;
+    }
+}
+
 }

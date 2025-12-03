@@ -35,7 +35,7 @@ public class upController : MonoBehaviour
     {
         Vector3 movement = new Vector3(0, speed, 0);
         transform.position += Time.deltaTime * movement;
-        if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.UpArrow))
+        if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.DownArrow))
         {
 
             Debug.Log("hit up");
@@ -44,7 +44,7 @@ public class upController : MonoBehaviour
 
         }
 
-        if (isInTrigger == false && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isInTrigger == false && Input.GetKeyDown(KeyCode.DownArrow))
         {
 
             Debug.Log("up failed");
