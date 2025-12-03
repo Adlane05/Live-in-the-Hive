@@ -7,8 +7,7 @@ public class rightController : MonoBehaviour
     public float speed = 2.0f;
     private bool isInTrigger = false;
     bool isNoteHit = false;
-    public counterController counterController;
-
+    float timer = 0.0f;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Right"))
@@ -33,12 +32,11 @@ public class rightController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 movement = new Vector3(0, speed, 0);
-        transform.position += Time.deltaTime * movement;
+        timer += Time.deltaTime;
         if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.RightArrow))
         {
 
-            Debug.Log("hit right");
+            Debug.Log("hit right " + timer);
              counterController.Instance.Score++;
             isNoteHit = true;
 
@@ -46,8 +44,7 @@ public class rightController : MonoBehaviour
 
         if (isInTrigger == false && Input.GetKeyDown(KeyCode.RightArrow))
         {
-
-            Debug.Log("right failed");
+            Debug.Log("hit right " + timer);
              counterController.Instance.Score--;
 
         }

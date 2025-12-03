@@ -7,7 +7,7 @@ public class downController : MonoBehaviour
     public float speed = 2.0f;
     private bool isInTrigger = false;
     bool isNoteHit = false;
-
+     float timer = 0.0f;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Down"))
@@ -32,21 +32,19 @@ public class downController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 movement = new Vector3(0, speed, 0);
-        transform.position += Time.deltaTime * movement;
-        if (!isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.LeftArrow))
-        {
 
-            Debug.Log("hit down");
+         timer += Time.deltaTime;
+        if (!isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("hit down " + timer);
             counterController.Instance.Score++;
             isNoteHit = true;
 
         }
 
-        if (isInTrigger == false && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (isInTrigger == false && Input.GetKeyDown(KeyCode.DownArrow))
         {
-
-            Debug.Log("Down failed");
+            Debug.Log("hit down " + timer);
             counterController.Instance.Score--;
 
         }

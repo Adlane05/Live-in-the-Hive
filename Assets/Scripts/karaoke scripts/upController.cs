@@ -7,7 +7,6 @@ public class upController : MonoBehaviour
     public float speed = 2.0f;
     private bool isInTrigger = false;
     bool isNoteHit = false;
-    public counterController counterController;
 
     void OnTriggerEnter(Collider other)
     {

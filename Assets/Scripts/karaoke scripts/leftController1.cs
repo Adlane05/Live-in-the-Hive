@@ -7,8 +7,7 @@ public class leftController : MonoBehaviour
     public float speed = 2.0f;
     private bool isInTrigger = false;
     bool isNoteHit = false;
-    public counterController counterController;
-
+    float timer = 0.0f;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Left"))
@@ -33,12 +32,11 @@ public class leftController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 movement = new Vector3(0, speed, 0);
-        transform.position += Time.deltaTime * movement;
+        timer += Time.deltaTime;
         if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
-            Debug.Log("hit left");
+            Debug.Log("hit left " + timer);
             counterController.Instance.Score++;
             isNoteHit = true;
 
@@ -47,7 +45,7 @@ public class leftController : MonoBehaviour
         if (isInTrigger == false && Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
-            Debug.Log("left failed");
+             Debug.Log("hit left " + timer);
             counterController.Instance.Score--;
 
         }
