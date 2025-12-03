@@ -81,6 +81,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.canContinue)
         {
+            
             isInDialogue = true;
             string currentSentence = story.Continue();
             ParseTags();
@@ -143,10 +144,20 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         message.text = "";
+        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(nametag.text);
+        if( friendStruct != null){
+                friendStruct.character.GetComponent<Animator>().SetBool("playTalk", true);
+        }
+        
         foreach (char letter in sentence.ToCharArray())
         {
             message.text += letter;
             yield return null;
+        }
+
+        if( friendStruct != null)
+        {
+            friendStruct.character.GetComponent<Animator>().SetBool("playTalk", false);
         }
     }
     IEnumerator ShowChoices()
@@ -201,8 +212,5 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    /*void ReturnToOriginal()
-    {
-        character.GetComponent<MeshRenderer>().material = character.GetComponent<CharResources>().sprites[0];
-    }*/
 }
+   

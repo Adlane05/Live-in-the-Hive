@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: Talk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,7 +23,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: ab8b0b5c3001ed2468627f39ddaac6af, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 8c7269fbb28b3ba45aa64ec51a30b007, type: 2}
+      value: {fileID: 21300000, guid: be2955b4c2eefbf4fa939ea1792644ee, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -47,7 +47,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: ab8b0b5c3001ed2468627f39ddaac6af, type: 3}
-    - {fileID: 21300000, guid: 8c7269fbb28b3ba45aa64ec51a30b007, type: 2}
+    - {fileID: 21300000, guid: be2955b4c2eefbf4fa939ea1792644ee, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
