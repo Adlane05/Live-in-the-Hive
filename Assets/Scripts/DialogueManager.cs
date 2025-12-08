@@ -226,6 +226,7 @@ public class DialogueManager : MonoBehaviour
     void FinishDialogue()
     {
         CameraSwitchConversation.Instance.gameObject.SetActive(false);
+        mainCamera.SetActive(true);
         isInDialogue = false;
         textBox.SetActive(false);
         storyStarted = false;
