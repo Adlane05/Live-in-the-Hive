@@ -3,43 +3,55 @@ using UnityEngine;
 public class CameraSwitchConversation : MonoBehaviour
 {
     [Header("Transforms")]
-    public Transform target;
+    public Transform[] target;
 
     [Header("Timing")]
     public float moveDuration = 15f;
 
     private float timer = 0f;
-    private bool isMoving = false;
-    private Transform origin;
-    void Start()
+    public bool isMoving = false;
+    public Transform origin;
+    public int index = 0;
+
+    public static CameraSwitchConversation Instance;
+
+    void Awake()
     {
-        StartMove();
+        Instance = this;
     }
 
-    public void StartMove()
+    [ContextMenu("StartMove")]
+    public void StartMoveInspector()
     {
+        StartMove(index);
+    }
+    public void StartMove(int cameraIndex )
+    {
+
         origin = transform;
         timer = 0f;
         isMoving = true;
+        index = cameraIndex;
+        
     }
 
     void Update()
-    {
-        if (!isMoving) return;
+    {   
+        if (!isMoving ) return;
 
         timer += Time.deltaTime;
         float t = Mathf.SmoothStep(0f, 1f, timer / moveDuration);
 
         // Position Lerp
-        transform.position = Vector3.Lerp(origin.position, target.position, t);
+        transform.position = Vector3.Lerp(origin.position, target[index].position, t);
 
         // Rotation Slerp
-        transform.rotation = Quaternion.Slerp(origin.rotation, target.rotation, t);
+        transform.rotation = Quaternion.Slerp(origin.rotation, target[index].rotation, t);
 
         if (t >= 1f)
         {
-            transform.position = target.position;
-            transform.rotation = target.rotation;
+            transform.position = target[index].position;
+            transform.rotation = target[index].rotation;
             isMoving = false;
         }
     }

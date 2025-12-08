@@ -1,6 +1,7 @@
 ->ShaunaStart
 === ShaunaStart ===
 #name Shauna
+#camera 2
 wanna do karaoke?
 #shauna yes yes
 *[hell yeah]
@@ -15,7 +16,9 @@ girl whatever
 what is your deal do you just not like fun?
 *[yeah]
 that i can fw 
+#camera 2 5
 you now have friendship points with me
+#camera 1
 #playHappy Shauna
 Ok Byeeeee!!!!
 ->END

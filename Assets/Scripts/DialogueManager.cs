@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static bool  isInDialogue = false;
     public static DialogueManager Instance;
+    public GameObject cameraManager;
+    public GameObject mainCamera;
     public GameObject textBox;
     public GameObject customButton;
     public GameObject twoOptionPanel;
@@ -47,6 +49,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartStory()
     {
+        cameraManager.SetActive(true);
+        cameraManager.transform.position = mainCamera.transform.position;
+        cameraManager.transform.rotation = mainCamera.transform.rotation;
+
+        Camera.main.gameObject.SetActive(false);
         Cursor.visible = true;
         textBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -135,6 +142,19 @@ public class DialogueManager : MonoBehaviour
                     
                         break;
                 }
+                case "camera":
+                {
+                    int cameraIndex = int.Parse(parameters[0]);
+                    if (parameters.Length > 1){
+                        float moveDuration = float.Parse(parameters[1]); 
+                        CameraSwitchConversation.Instance.moveDuration = moveDuration;
+                        
+                        CameraSwitchConversation.Instance.StartMove(cameraIndex);
+                    }else 
+                        CameraSwitchConversation.Instance.StartMove(cameraIndex);
+                    
+                        break;
+                }
                        
             }
         }
@@ -205,7 +225,7 @@ public class DialogueManager : MonoBehaviour
     }
     void FinishDialogue()
     {
-        Debug.Log("FinishDialogue");
+        CameraSwitchConversation.Instance.gameObject.SetActive(false);
         isInDialogue = false;
         textBox.SetActive(false);
         storyStarted = false;
