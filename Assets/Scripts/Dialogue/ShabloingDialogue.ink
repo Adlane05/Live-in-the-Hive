@@ -1,4 +1,4 @@
-﻿=== visit1 ===
+=== visit1 ===
 woa a real life Shabloing! #name Hornet #camera 2 5
 must be my lucky day... #camera 0 
 i bet alot of people from all over the world would wanna see that
