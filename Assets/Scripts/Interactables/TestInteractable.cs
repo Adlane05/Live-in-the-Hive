@@ -19,7 +19,10 @@ public class TestInteractable : MonoBehaviour, IInteractable
     chara = this.gameObject;
 }
     public void Interact()
-    {if(!DialogueManager.isInDialogue){
+    {
+        if(numberOfInteractions> 0)
+        InformationManager.Instance.hasInteractedCabinet = true;
+        if(!DialogueManager.isInDialogue){
         if (numberOfInteractions == 0)
         {
             DialogueManager.Instance.StartStory(inkJSONAsset, "visit1");

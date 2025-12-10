@@ -18,6 +18,7 @@ public class InformationManager : MonoBehaviour
     public FriendshipStruct[] friendshipDictionary;
     public String StandChoice = "null";
     public String[] Inventory = new String[3];
+    public bool hasInteractedCabinet;
    void Awake()
     {
         Instance = this;

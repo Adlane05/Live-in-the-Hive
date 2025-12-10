@@ -803,6 +803,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  hasInteractedCabinet: 0
 --- !u!1 &48180322
 GameObject:
   m_ObjectHideFlags: 0
@@ -8005,6 +8006,8 @@ GameObject:
   m_Component:
   - component: {fileID: 759366396}
   - component: {fileID: 759366395}
+  - component: {fileID: 759366397}
+  - component: {fileID: 759366398}
   m_Layer: 0
   m_Name: Shabloing
   m_TagString: Untagged
@@ -8079,6 +8082,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -219.885, z: 0}
+--- !u!114 &759366397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759366394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed437ea9b6a33ca43aedb9eb05d88af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectInteractableMessage: See Shabloing
+  inkJSONAsset: {fileID: 4900000, guid: 1c11751acc7aa7e4680ace480ede413b, type: 3}
+--- !u!65 &759366398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759366394}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.820001, y: 5.8, z: 0.20000039}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &769821785
 GameObject:
   m_ObjectHideFlags: 0
@@ -18894,8 +18932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
   - {fileID: 1960060604}
-  - {fileID: 95424050}
   - {fileID: 598279786}
+  - {fileID: 95424050}
   moveDuration: 15
   isMoving: 0
   origin: {fileID: 0}
@@ -18917,7 +18955,7 @@ Camera:
   m_GameObject: {fileID: 2081651702}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

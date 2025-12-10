@@ -8,10 +8,20 @@ public class leftController : MonoBehaviour
     private bool isInTrigger = false;
     bool isNoteHit = false;
     float timer = 0.0f;
+    Renderer renderer;
+    Color ogColor;
+    GameObject current;
+    void Start()
+    {   
+        renderer = GetComponent<Renderer>(); 
+        ogColor = renderer.material.color;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Left"))
         {
+            current = other.gameObject;
             isInTrigger = true;
         }
         isNoteHit = false;
@@ -21,10 +31,10 @@ public class leftController : MonoBehaviour
     {
         if (other.CompareTag("Left"))
         {
+            current = null;
             isInTrigger = false;
             if (!isNoteHit)
             {
-                counterController.Instance.Score--;
                 isNoteHit = false;
             }
             
@@ -35,20 +45,25 @@ public class leftController : MonoBehaviour
         timer += Time.deltaTime;
         if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.LeftArrow))
         {
-
-            Debug.Log("hit left " + timer);
+            if (current != null)
+                Destroy(current); 
             counterController.Instance.Score++;
             isNoteHit = true;
+            Invoke("ResetColor",0.5f);
+            renderer.material.SetColor("_Color", Color.green);
 
         }
 
         if (isInTrigger == false && Input.GetKeyDown(KeyCode.LeftArrow))
         {
-
-             Debug.Log("hit left " + timer);
-            counterController.Instance.Score--;
+            renderer.material.SetColor("_Color", Color.red);
+            Invoke("ResetColor",0.5f);
 
         }
+    }
+    void ResetColor()
+    {
+        renderer.material.SetColor("_Color",ogColor);
     }
 
 }

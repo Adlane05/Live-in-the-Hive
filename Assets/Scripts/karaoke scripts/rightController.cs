@@ -8,10 +8,21 @@ public class rightController : MonoBehaviour
     private bool isInTrigger = false;
     bool isNoteHit = false;
     float timer = 0.0f;
+    Renderer renderer;
+    Color ogColor;
+    GameObject current;
+
+    void Start()
+    {   
+        renderer = GetComponent<Renderer>(); 
+        ogColor = renderer.material.color;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Right"))
         {
+            current = other.gameObject;
             isInTrigger = true;
         }
         isNoteHit = false;
@@ -21,10 +32,10 @@ public class rightController : MonoBehaviour
     {
         if (other.CompareTag("Right"))
         {
+            current = null;
             isInTrigger = false;
             if (!isNoteHit)
             {
-                counterController.Instance.Score--;
                 isNoteHit = false;
             }
             
@@ -35,20 +46,25 @@ public class rightController : MonoBehaviour
         timer += Time.deltaTime;
         if ( !isNoteHit && isInTrigger == true && Input.GetKeyDown(KeyCode.RightArrow))
         {
-
-            Debug.Log("hit right " + timer);
-             counterController.Instance.Score++;
+            if (current != null)
+                Destroy(current); 
+            counterController.Instance.Score++;
             isNoteHit = true;
-
+            Invoke("ResetColor",0.5f);
+            renderer.material.SetColor("_Color", Color.green);
         }
 
         if (isInTrigger == false && Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("hit right " + timer);
-             counterController.Instance.Score--;
+            renderer.material.SetColor("_Color", Color.red);
+            Invoke("ResetColor",0.5f);
 
         }
+        
     }
-
+      void ResetColor()
+    {
+        renderer.material.SetColor("_Color",ogColor);
+    }
 }
 
