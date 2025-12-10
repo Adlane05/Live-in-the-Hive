@@ -32,14 +32,14 @@ and what may this astral being go by
 *[Clinthar]
 Clinthar lord of feasts and the hunt #name Hornet
 ~ player_name = "Clinthar lord of feasts and the hunt"
-eldritch ass name?? is your domain nature or something not appropriate to childrens ears- #Mars #camera 5
-lol sounds like an AO3 tag list #Annabel #camera 4
+eldritch ass name?? is your domain nature or something not appropriate to childrens ears- #name Mars #camera 5
+lol sounds like an AO3 tag list #name Annabel #camera 4
 -> afterChoice
 *quigley #name Hornet
 ~ player_name = "Quigley"
 quigley? that sounds familiar for some reason... 
-i think that loser with the weird karaoke obsession mentioned the name as someone who's even more of a loser, somehow #Mars #camera 5
-that sounds like a fake name, i am intrigued like never before #Annabel #camera 4
+i think that loser with the weird karaoke obsession mentioned the name as someone who's even more of a loser, somehow #name Mars #camera 5
+that sounds like a fake name, i am intrigued like never before #name Annabel #camera 4
 -> afterChoice
 *The Antler Queen #name Hornet
  ~ player_name = "The Antler Queen"
