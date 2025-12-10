@@ -9,7 +9,7 @@ public class GenericInterable : MonoBehaviour, IInteractable
     string objectInteractableMessage;
     [SerializeField]
     private TextAsset inkJSONAsset = null;
-    private int numberOfInteractions = 1;
+    private int numberOfInteractions = 0;
     public int maxNumberInteraction = 0;
     public string knotName ="visit";
 

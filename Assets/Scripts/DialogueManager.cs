@@ -124,8 +124,10 @@ public class DialogueManager : MonoBehaviour
             switch (prefix)
             {
                 case "level":
+                    
                     if (parameters.Length >= 1)
                         SceneManager.LoadScene(parameters[0]);
+                        FinishDialogue();
                     break;
 
                 case "name":

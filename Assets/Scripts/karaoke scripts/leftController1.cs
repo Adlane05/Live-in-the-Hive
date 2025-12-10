@@ -11,6 +11,15 @@ public class leftController : MonoBehaviour
     Renderer renderer;
     Color ogColor;
     GameObject current;
+      public AudioSource negative;
+    public AudioSource positive;
+
+     void Awake()
+        {
+            negative = negative.gameObject.GetComponent<AudioSource>();
+            positive = positive.gameObject.GetComponent<AudioSource>();
+
+        }
     void Start()
     {   
         renderer = GetComponent<Renderer>(); 
@@ -49,6 +58,7 @@ public class leftController : MonoBehaviour
                 Destroy(current); 
             counterController.Instance.Score++;
             isNoteHit = true;
+            positive.Play();
             Invoke("ResetColor",0.5f);
             renderer.material.SetColor("_Color", Color.green);
 
@@ -56,6 +66,8 @@ public class leftController : MonoBehaviour
 
         if (isInTrigger == false && Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            negative.Play();
+
             renderer.material.SetColor("_Color", Color.red);
             Invoke("ResetColor",0.5f);
 
