@@ -10,31 +10,37 @@ public class FriendshipStruct
     public int friendshipScore;
     public string[] inkFilePath;  
     public GameObject character;
+    
 }
 public class InformationManager : MonoBehaviour
 {
+
    public static InformationManager Instance;
     [SerializeField]
     public FriendshipStruct[] friendshipDictionary;
-    public String StandChoice = "null";
-    public String[] Inventory = new String[3];
-    public bool hasInteractedCabinet;
+    public List<InventoryItem> allItems = new List<InventoryItem>();
+    public bool hasInteractedQinyi = false;
+    public bool QinyiQuestDone;
+    public GameObject tableContents;
    void Awake()
     {
         Instance = this;
 
 
     }
+    public void Update(){
+        if(QinyiQuestDone){
+            tableContents.SetActive(true);
+        }
+    }
     public FriendshipStruct GetFriendshipStruct( string name)
     
     {
         name = name.Trim(' ');
-        Debug.Log("Search for friend");
         foreach ( FriendshipStruct friend in friendshipDictionary)
         {
             if (friend.name == name)
             {
-                Debug.Log(friend.name);
                 return friend;
 
             }

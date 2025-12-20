@@ -15,7 +15,7 @@ and then blow them out all at once to get all the wishes
 what was your wish? #name Annabel #camera 4
  to start a dandellion infestaion? 
 yes ;3 #name Mars #camera 5 2 
-heh #name Hornet # camera 0
+heh #name Player # camera 0
 -> END
 
 === visit2 ===
@@ -24,24 +24,24 @@ i do not mean to alarm you my diggity doggity dude  #name Annabel #camera 4
 huh #name Mars # camera 5
 oh hello #camera 0 2
 can i help you??? 
-oh yeah i forgot you can percieve me #name Hornet
+oh yeah i forgot you can percieve me #name Player
 no i can tell youre an astral being #name Mars
 i can sense you via your malicious presence 
 wowie what a presence to behold! #name Annabel #camera 4
 and what may this astral being go by
 *[Clinthar]
-Clinthar lord of feasts and the hunt #name Hornet
+Clinthar lord of feasts and the hunt #name Player
 ~ player_name = "Clinthar lord of feasts and the hunt"
 eldritch ass name?? is your domain nature or something not appropriate to childrens ears- #name Mars #camera 5
 lol sounds like an AO3 tag list #name Annabel #camera 4
 -> afterChoice
-*quigley #name Hornet
+*quigley #name Player
 ~ player_name = "Quigley"
 quigley? that sounds familiar for some reason... 
 i think that loser with the weird karaoke obsession mentioned the name as someone who's even more of a loser, somehow #name Mars #camera 5
 that sounds like a fake name, i am intrigued like never before #name Annabel #camera 4
 -> afterChoice
-*The Antler Queen #name Hornet
+*The Antler Queen #name Player
  ~ player_name = "The Antler Queen"
 hm not sure about that one #name Annabel
 that sounds more like that wierd shauna girl's things #camera 1
@@ -51,7 +51,7 @@ shes like a wierdo that keeps asking people to do karaoke
 she always does the same fucking song
 its not even friday
 -> afterChoice
-*Just Hornet #name Hornet
+*Just Hornet #name Player
 ~ player_name = "Hornet"
 Hornet?? #name Mars
 like hornet from silksong hornet?? 

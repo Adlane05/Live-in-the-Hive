@@ -1,13 +1,11 @@
 === visit1 ===
-woa a real life Shabloing! #name Hornet #camera 2 5
-must be my lucky day... #camera 0 
-i bet alot of people from all over the world would wanna see that
+woa a cool shabloing should i pick him up #name Player
 -> END
 === visit2 ===
-no one's looking...i could probably swipe him if i found a place to put him #name Hornet #camera 2 5
+no one's looking...i could probably swipe him if i found a place to put him #name Player #camera 2 5
 -> END
 
 === visit3 ===
-i can put him in the cabinet! #name Hornet #camera 2 5
+i can put him in the cabinet! #name Player #camera 2 5
 cmere buddy...
 -> END

@@ -14,11 +14,11 @@ girl whatever
 what is your deal do you just not like fun?
 *[yeah]
     that i can fw #camera 2 5
-    you now have friendship points with me #playHappy Shauna #camera 1 
+    you now have friendship points with me #play Happy Shauna #camera 1 
     Ok Byeeeee!!!! 
     -> END
 *[no i love fun youre just boring]
-    fuck you you no longer have friendship points with me #texture shauna 2 1
+    fuck you you no longer have friendship points with me #play Angry Shauna
     Ok Byeeeee!!!! 
     -> END
 

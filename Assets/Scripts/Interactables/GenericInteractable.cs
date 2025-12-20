@@ -24,12 +24,10 @@ public class GenericInterable : MonoBehaviour, IInteractable
         {
             if (numberOfInteractions < maxNumberInteraction)
             {
-                Debug.Log("GenericInteract bellow");
                 DialogueManager.Instance.StartStory(inkJSONAsset, knotName + (numberOfInteractions + 1));
             }
             else 
             {
-                Debug.Log("GenericInteract above");
                 DialogueManager.Instance.StartStory(inkJSONAsset, knotName + maxNumberInteraction);
             }
             numberOfInteractions++;

@@ -15,11 +15,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject cameraManager;
     public GameObject mainCamera;
     public GameObject textBox;
+    public Text questText;
     public GameObject customButton;
     public GameObject twoOptionPanel;
     public GameObject fourOptionPanel;
     public bool isTalking = false;
     public static Story story;
+    public AudioSource musicplayer;
+    public AudioSource goodSound;
+    public AudioSource badSound;
     Text nametag;
     Text message;
     List<string> tags;
@@ -119,10 +123,49 @@ public class DialogueManager : MonoBehaviour
 
             // Everything after the prefix is parameters
             string[] parameters = parts.Skip(1).ToArray();
-            Debug.Log("Prefix "+ prefix);
-            Debug.Log("Parameters " + parameters[0]);
             switch (prefix)
             {
+                 case "pickup":
+                {
+                     InventoryItem item = InformationManager.Instance.allItems.Find(i => i.itemId == parameters[0]);
+                    
+                    if(InventoryManager.Instance.AddItem(item))
+                        goodSound.Play();
+                    else{
+                        badSound.Play();
+                    }
+                    break;
+                }
+                case "remove":
+                {                    
+                    if(InventoryManager.Instance.RemoveItem(parameters[0]))
+                        goodSound.Play();
+                    else{
+                        badSound.Play();
+                    }
+                    break;
+                }
+                case "kristen":
+                if(parameters[0] == "away"){
+                    FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct("Kristen");
+                    friendStruct.character.GetComponent<Animator>().SetTrigger("sendAway");
+                    Invoke("changeKristen", 3);
+                }
+                if(parameters[0] == "there"){
+                    KristenController.Instance.meshRenderer.material = KristenController.Instance.failKristen;
+
+                }
+                if(parameters[0] == "notthere"){
+                    KristenController.Instance.meshRenderer.material = KristenController.Instance.normalKristen;
+                }
+                if(parameters[0] == "talk"){
+                    KristenController.Instance.meshRenderer.material = KristenController.Instance.winKristen;
+
+                }
+                break;
+                case "music":
+                musicplayer.Play();
+                break;
                 case "level":
                     
                     if (parameters.Length >= 1)
@@ -134,12 +177,30 @@ public class DialogueManager : MonoBehaviour
                     if (parameters.Length >= 1)
                         nametag.text = parameters[0];
                     break;
-                case "playhappy":
+                case "quest":
+                    if (parameters.Length >= 1)
+                        questText.text = string.Join(" ", parameters);
+                    break;
+                case "play":
                 {
-                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(parameters[0]);
+                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(parameters[1]);
                         if (friendStruct != null)
                         {
-                            friendStruct.character.GetComponent<Animator>().SetTrigger("playHappy");
+                            friendStruct.character.GetComponent<Animator>().SetTrigger(parameters[0]);
+                        }
+                    
+                        break;
+                }
+                
+                case "playsad":
+                {       
+                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct("Qinyi");
+                        if (friendStruct != null)
+                        {
+                            if(parameters[0] == "true")
+                            friendStruct.character.GetComponent<Animator>().SetBool("sad", true );
+                        if(parameters[0] == "false")
+                            friendStruct.character.GetComponent<Animator>().SetBool("sad", false );
                         }
                     
                         break;
@@ -212,14 +273,12 @@ public class DialogueManager : MonoBehaviour
         story.ChooseChoiceIndex(index);
         if (numberOfChoices == 2)
         {
-            Debug.Log(index);
             AdvanceDialogue();
             twoOptionPanel.SetActive(false);
 
         }
         else if (numberOfChoices == 4)
         {
-            Debug.Log(index);
             AdvanceDialogue();
             fourOptionPanel.SetActive(false);
 
@@ -234,6 +293,10 @@ public class DialogueManager : MonoBehaviour
         storyStarted = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    void changeKristen(){
+        KristenController.Instance.meshRenderer.material = KristenController.Instance.failKristen;
+
     }
 }
    

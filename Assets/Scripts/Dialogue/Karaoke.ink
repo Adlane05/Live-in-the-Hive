@@ -1,4 +1,4 @@
-﻿=== youSuck ===
+=== youSuck ===
 wow that was actually insulting #name shauna #camera 1
 your performance was so bad you dont even get an outro
 get out of my sight
