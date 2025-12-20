@@ -177,3 +177,45 @@ meow....meow? #name Ella #camera 17
 meow... #name Wafa #camera 16
 lesbian to lesbian communication #name Player #camera 0
 ->END
+=== Kristen1 ===
+hey kristen #name Player #camera 1
+hello!#name Kristen
+where is everyone? #name Player
+around this time of the days everyone at their classes#name Kristen
+seems like we still got a couple of strays here and there though
+try and help em see what they need #camera 0
+->END
+=== Kristen2 ===
+hey kristen? #name Player #camera 1
+yeah? #name Kristen
+what happened to her... #name Player
+to the other one...
+to Marya Faye Grant...
+hm about time it got brought up... #name Kristen
+have you noticed anything weird about how this school is layed out?
+yeah the access center. the quietest place in the building faces us.
+the loudest place in the building
+but you see they have more power. more votes. more everything.
+we cant really have a say in any of this you see
+im confused what does this have to do with her? #name Player
+Marya and i used to be partners in hive... #name Kristen
+budy cops if you will
+we tried our best to keep the access center at bay but well.. youve seen these kids
+getting them to be quiet isnt easy
+and when things got too rowdy...
+they demanded a face. someone to blame.
+someone to make an example out of.
+they were gonna take one of you.
+but Marya couldnt let that happen
+she sacrificed herself. lied to them and turned herself in.
+her desk was promptly removed, ever since she walked through that door. she was never seen again. #camera 2
+oh lord...#name Player #camera 1
+thats old stuff though kid. #name Kristen
+before your time.
+dont let it bog you down.
+go make friends #camera 0
+->END
+=== Kristen3 ===
+im sure Shauna would love to talk to you over there #name Kristen 
+go on help its your task for the day
+->END
