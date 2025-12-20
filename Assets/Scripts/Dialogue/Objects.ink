@@ -177,7 +177,7 @@ alrighty then you know where to find me #kristen there #camera 0
 ->DONE
 *[LETS GO]
 thats the spirit
-#level noon 
+#level Noon 
 ->END
 === sleeper1 ===
 i dont think thats a student... #name Player

@@ -13,6 +13,8 @@ public class QinyiInteractable : MonoBehaviour, IInteractable
     private bool hasGivenPaint;
     private bool hasGivenPapers;
     private bool hasGivenWater;
+    public GameObject tableContents;
+
     public void Interact()
     
     {
@@ -42,6 +44,8 @@ public class QinyiInteractable : MonoBehaviour, IInteractable
             if(InventoryManager.Instance.HasItem("full") && hasGivenPapers && hasGivenPaint){
                 hasGivenPaint = true;
                 DialogueManager.Instance.StartStory(inkJSONAsset, "FINALQinyi");
+            tableContents.SetActive(true);
+        }
                 
             }
             if(InventoryManager.Instance.HasItem("full") && InventoryManager.Instance.HasItem("papers") && InventoryManager.Instance.HasItem("tubes")){
@@ -49,7 +53,8 @@ public class QinyiInteractable : MonoBehaviour, IInteractable
                 hasGivenPaint = true;
                 hasGivenWater = true;
                 DialogueManager.Instance.StartStory(inkJSONAsset, "FINALQinyi");
-                
+                            tableContents.SetActive(true);
+
             }
             if(InventoryManager.Instance.HasItem("papers") && !hasGivenPaint){
                 hasGivenPapers = true;
@@ -96,4 +101,4 @@ public class QinyiInteractable : MonoBehaviour, IInteractable
            
         }   
     }
-}
+

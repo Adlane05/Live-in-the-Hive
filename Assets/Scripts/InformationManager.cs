@@ -21,18 +21,13 @@ public class InformationManager : MonoBehaviour
     public List<InventoryItem> allItems = new List<InventoryItem>();
     public bool hasInteractedQinyi = false;
     public bool QinyiQuestDone;
-    public GameObject tableContents;
    void Awake()
     {
         Instance = this;
 
 
     }
-    public void Update(){
-        if(QinyiQuestDone){
-            tableContents.SetActive(true);
-        }
-    }
+
     public FriendshipStruct GetFriendshipStruct( string name)
     
     {
