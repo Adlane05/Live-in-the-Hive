@@ -20,27 +20,32 @@ public class GenericInterable2 : MonoBehaviour, IInteractable
         chara = this.gameObject;
     }
     public void Interact()
+{
+    if (DialogueManager.isInDialogue)
+        return;
+
+    bool hasBoth =
+        InventoryManager.Instance.HasItem("Shabloing") &&
+        InventoryManager.Instance.HasItem("Shabloing1");
+
+    int interactionIndex = Mathf.Min(numberOfInteractions + 1, maxNumberInteraction);
+
+    if (hasBoth)
     {
-        if(!DialogueManager.isInDialogue)
-        { 
-            if (!InventoryManager.Instance.HasItem("Shabloing") && !InventoryManager.Instance.HasItem("Shabloing1") && numberOfInteractions < maxNumberInteraction)
-            {
-                DialogueManager.Instance.StartStory(inkJSONAsset, knotName + (numberOfInteractions + 1));
-            }
-            else 
-            {
-                DialogueManager.Instance.StartStory(inkJSONAsset, knotName + maxNumberInteraction);
-            }
-             if (InventoryManager.Instance.HasItem("Shabloing") && InventoryManager.Instance.HasItem("Shabloing1") && numberOfInteractions < maxNumberInteraction)
-            {
-                DialogueManager.Instance.StartStory(inkJSONAsset, knotName2 + (numberOfInteractions + 1));
-            }
-            else 
-            {
-                DialogueManager.Instance.StartStory(inkJSONAsset, knotName2 + maxNumberInteraction);
-            }
-            numberOfInteractions++;
-            
-        }   
+        DialogueManager.Instance.StartStory(
+            inkJSONAsset,
+            knotName2 + interactionIndex
+        );
     }
+    else
+    {
+        DialogueManager.Instance.StartStory(
+            inkJSONAsset,
+            knotName + interactionIndex
+        );
+    }
+
+    numberOfInteractions++;
+}
+
 }

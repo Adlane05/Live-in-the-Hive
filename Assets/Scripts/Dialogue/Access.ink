@@ -120,13 +120,13 @@ i dont know what to do
 im sorry #name Bee 
 fight for us okay? remember what you learned->END
 === ShaunaFail1 ===
-don't talk to me #name Shauna
+don't talk to me #name Shauna #camera 3
 if you hadn't played so bad maybe we wouldnt have had the access center on our backs
 now get out of my sight before the access center has to pick you up in pieces. ->END
 === ShaunaFail2 ===
 Fuck off #name Shauna ->END
 === ShaunaShabloing1 ===
-im- listen im sorry for this i didnt realize the door was still open when we did that #name Shauna
+im- listen im sorry for this i didnt realize the door was still open when we did that #name Shauna #camera 3
 this isnt my fault but you know.. sorry you feel like its.
 ill take it #name Player
 hey...bee said you might have something that could help me...
@@ -135,13 +135,13 @@ thats genuis! they wont ever see it coming
 take this Shabloing. and make them pay for what they did to us. #pickup Shabloing2
 ->END
 === ShaunaShabloing2 ===
-the voices are waiting for you... #name Shauna
+the voices are waiting for you... #name Shauna #camera 3
 give em hell for me. ->END
 === ShaunaNoShabloing1 ===
-im- listen im sorry for this i didnt realize the door was still open when we did that #name Shauna
+im- listen im sorry for this i didnt realize the door was still open when we did that #name Shauna #camera 3
 not like this is my fault but you know.. sorry you feel like it is.
 ill take it #name Player
-sucks that you had to die so soon #name Shauna
+sucks that you had to die so soon #name Shauna #camera 3
 i had a lot of songs i wanted to share with you.
 guess theyll have to wait for when i see you in hell
 ->END
