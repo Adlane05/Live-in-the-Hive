@@ -20,19 +20,164 @@ youve been through alot. if anyone could do this its you
 sure. #name Player #camera 1
 ->END
 
-=== access ===
-Come forth. #door back
-come and atone.
-you're brought here for the crimes of you and your people.
-YOU NEVER SIGNED THE PAPERS FOR THAT KARAOKE EVENT. YOURE OUTTA LUCK
+=== access1 ===
+Come forth. #camera 5 #name Desolation
+come and atone. #camera 7
+we are all gathered here to execute the trial of kristen's new assistant. #camera 9
+how do you plead
+->friends
+
+=== access2 ===
+Come forth. #camera 5 #name Desolation
+come and atone. #camera 7
+we are all gathered here to execute the trial of kristen's new assistant. #camera 9
+how do you plead
+*[release shabloings]
+-> Shabloing
+*[my friends]
+->friends
+->END
+
+=== Shabloing ===
+->END
+=== friends ===
+this isnt fair. #name Player
+These people are my friends. the hive is a COMMUNITY #camera 2
+we're people. #camera 3
+you've forced us into a game that well never be able to win #camera 4
+and im not letting you keep picking us off one by one. #camera 5
+intriguing #name Desolation #camera 6
+if you so wish.
+then fight.
+what? #name Player #camera 5
+prove to the chorus. #name Desolation #camera 8
+your. 
+loyalty.
+prove to us.
+that she's taught you the right lessons.
+hm. #name Player #camera 6
+prove to you how?
+INQUIRY 1: What is Annabel allergic to #name Desolation
+you're joking #name Player 
+prove your friendships child. #camera 8
+prove you have loved the world around you.
+to be loved is to be known.
+and be loved regardless.
+so i ask again. 
+INQUIRY 1: What Allergy is the Annabel Afflicted with #name Desolation
+* Four leaf clovers
+* Everything
+* Sesame Seeds 
+* Eggs
+- Correct
+you got anything harder to throw at me? #name Player
+hm. #name Desolation #camera 7
+okay.
+INQUIRY 2, fill in the blank: it's not heroic its ________
+* productive
+->failure1
+* proactive
+-mars taught me that one... #name Player #camera 6
+good. #name Desolation
+much to learn here.
+INQUIRY 3: Who Guarded the Paper Cabinet
+*Paola
+the girl who with the phone looks like shes from a different game #name Player
+she was pretty dry but...i dont know there was something to her
+i think she added a key dynamic to that place
+*Annabel
+->failure1
+*Qinyi
+->failure1
+*Shabloing
+->failure1
+-Please refrain from adding unnecessary additions #name Desolation #camera 8
+im here to prove i love my friends arent i? let me do it. #name Player #camera 5
+. #name Desolation
+INQUIRY 4: what animal did the loin come from #camera 6
+*bull
+that wierdo teo liked putting "bull testicles" in his mouth according to his friend #name Player
+they were quite the dynamic duo
+*goat -> failure1
+*pig -> failure1
+*chicken -> failure1
+-they are quite the loud duo. #name Desolation
+The small one followed in her footsteps. 
+but he does not know what awaits.
+INQUIRY 5: what did the yellow one name the 80 year old woman
+* karoline
+->failure1
+* karen
+she's the soggiest little creature in the world i knowww #name Player
+* kimberly
+->failure1
+* summer
+->failure1
+-INQUIRY 6: who the fuck was that dude sleeping on the couch #name Desolation #camera 7
+* idk
+seriously though who was that guy #name Player #camera 5 2
+some mysteries are even beyond me #name Desolation #camera 7 2
+* james -> failure1
+* bear killer -> failure1
+* my dad -> failure1
+- come on are we done? i think ive proven i love my friends #name Player #camera 5 2
+INQUIRY 6: what was her name #name Desolation #camera 9
+*Mariah 
+->failure1
+*Marya
+- What did she look like 
+*red glasses grey hair
+*grey hair black glasses -> failure1
+*blue eyes brown hair -> failure1
+*dark hair red glasses -> failure1
+- what did I do to her
+* killed 
+* removed
+- did she-
+THATS ENOUGH #name Player #camera 5
+you're not gonna let me win are you...
+ha #name Desolation #camera 6
+you were NEVER GONNA LET ME WIN WERE YOU #name Player
+ha ha ha #name Desolation
+you were never meant to wi- #camera 8
+AUGHHHHHHHH
+OH GOD WHAT ARE YOU- DOIII
+i'm sorry but i am going to have to kick you out #name Marya
+IT CANT BE- #name Player
+oh trust me it can #name Marya
+Marya. Hive Admin. back just in time for the holiday special
+its you its really you! #name Player
+nice job taking over for me back there, sorry for slacking but i was busy haunting the narrative #name Marya
+your half up...#name Player
+what can i say, its monday #name Marya
+good job showing that bozo the true meaning of friendships
+im gonna be so honest even i couldnt answer some of those questions
+but you stuck it up to them and thats what matters
+you didnt get fridged like i did.
+how are you back? #name Player
+its a christmas miracle #name Marya
+... #name Player
+listen man i dont know what to tell you, i felt my kids needed me and i showed up #name Marya
+what i should be hearing right now is a big fat thank you
+tha- #name Player
+dont thank me yet. the work's not done. #name Marya
+you're gonna hate me for this
+but its the only way
+i have to seal the access center for ever its the only way meaning youll be sealed inside
+but after this. we can sing as loud as we want
+i think im ok with that- #name Player
+i didnt have much going on before the hive, if this is what it takes
+so be it.
+tell my friends i love them 
+tell em yourself #name Marya.
 ->END
 === failure1 ===
-that is enough.
+that is enough. #name Desolation #camera 8
 you have inserted yourself into a world unfit.
 no vision of grand creation can sneak you between its lines.
 you claim to love what she created yet your words ring hollow.
-i-
-your trial has ended. 
+i- #name Player
+your trial has ended. #name Desolation
 and so has your time to speak.
 all you children of queen are the same.
 spoiled rotten to the core.
@@ -48,23 +193,7 @@ when your time comes and you lower your head in shame as you enter our pearly ga
 Kristen may have kept you safe until now, but you were never meant to win.
 let this desolation burn you from the inside out.#hell
 ->END
-=== failure2 ===
-oh god oh god!
-GET OUT OF MY COURT ROOM
-it is over. child.
-how could you come into OUR COURT and claim innocence with a voice LIKE THAT
-WHO DYOU THINK WE ARE
-she has set you up for failure. a wasp with a soul unborn
-a comb with no honey to speak of. 
-i-
-you did not understand the purpose of the other side
-you've failed them. all of them.
-SHES THE ONE WHO FAILED THEM CANT YOU SEE?
-IT DOES NOT EVEN UNDERSTAND THE POWER OF FRIENDSHIP
-yet they smell of nectar all the same.
-you all truly are her bastard children.
-goodbye.#hell
-->END
+
 === evilCrowd1 ===
 theres no going anywhere now Hiver #name Evil-Student
 you say it like its a slur...#name Player

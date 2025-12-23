@@ -221,6 +221,11 @@ public class DialogueManager : MonoBehaviour
 
                 questText.text = string.Join(" ", parameters);
                 break;
+                case "hell":
+                GameObject.Find("Player").transform.position = GameObject.Find("Player").transform.position + new Vector3(0, -3, 0);
+
+                
+                break;
                 case "play":
                 {
                     var character = InformationManager.Instance.GetCharacter(parameters[1]);
