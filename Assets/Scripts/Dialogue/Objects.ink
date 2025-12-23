@@ -15,17 +15,15 @@ one wrong word or too much noise and id get eaten alive #camera 0
 
 === Paola1 ===
 arent you gonna do the art event? #name Player
-can't you see im busy #name Paola
-youre playing on your phone... #name Player
-NO IM NOT PLAYING ON MY PHONE IM STANDING ON BUISNESS #name Paola
-->END
-=== Paola2 ===
-are you sure you dont wanna join them? #name Player
-nah man last time i went the yellow one started babbling abbout cannibal lesbian #name Paola
+nah man last time i went the yellow one started babbling abbout cannibal lesbians #name Paola
 oh i have an exam on that next week #name Player
-what is it with this place and attracting wierdos #name Paola
+what is it with this place and attracting wierdos i swear to god#name Paola
 you're here too tho? #name Player
 i do not see how thats relevant #name Paola
+->END
+=== Paola2 ===
+nope #name Paola
+busy
 ->END
 
 === Paola3 ===

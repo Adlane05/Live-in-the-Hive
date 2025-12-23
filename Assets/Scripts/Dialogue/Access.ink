@@ -17,7 +17,7 @@ this was your plan all along wasnt it...
 im sorry kid i really am #name Kristen #camera 2
 i was hoping it wouldnt have to come to this
 youve been through alot. if anyone could do this its you
-sure. #name Player #camera 1
+sure. #name Player #camera 1 #quest put a stop to access. or die trying
 ->END
 
 === access1 ===
@@ -160,36 +160,37 @@ you were NEVER GONNA LET ME WIN WERE YOU #name Player
 ha ha ha #name Desolation
 you were never meant to wi- #camera 8
 AUGHHHHHHHH
-OH GOD WHAT ARE YOU- DOIII
-i'm sorry but i am going to have to kick you out #name Marya
-IT CANT BE- #name Player
-oh trust me it can #name Marya
-Marya. Hive Admin. back just in time for the honice job distracting them with the power of friendshipl access is at its weakest when the doors are opemiday special
-its you its really you! #name Playernice job distracting them with the power of friendship
+OH GOD WHAT ARE YOU- DOIII #end desolation #end Marya
+i'm sorry but i am going to have to kick you out #name Marya #camera 6 
+IT CANT BE- #name Player #camera 5
+oh trust me it can #name Marya 
+Marya. Hive Admin. back just in time for the holiday special #camera 6
+its you its really you! #name Playernice job distracting them with the power of friendship #camera 5
 nice job distracting them with the power of friendship, access is at its weakest when the doors are open
-sorry for slacking but i was busy haunting the narrative #name Marya
-your half up...#name Player
-what can i say, its monday #name Marya
+sorry for slacking but i was busy haunting the narrative #name Marya 
+your half up...#name Player #camera 6
+what can i say, its monday #name Marya #camera 8
 good job showing that bozo the true meaning of friendships
-im gonna be so honest even i couldnt answer some of those questions
+im gonna be so honest even i couldnt answer some of those questions #camera 6
 but you stuck it up to them and thats what matters
-you didnt get fridged like i did.
-how are you back? #name Player
-its a christmas miracle #name Marya
+you didnt get fridged like i did. #camera 8
+how are you back? #name Player #camera 5
+its a christmas miracle #name Marya #camera 6
 ... #name Player
 listen man i dont know what to tell you, i felt my kids needed me and i showed up #name Marya
 what i should be hearing right now is a big fat thank you
 tha- #name Player
-dont thank me yet. the work's not done. #name Marya
+dont thank me yet. the work's not done. #name Marya #camera 8
 you're gonna hate me for this
 but its the only way
 i have to seal the access center for ever its the only way meaning youll be sealed inside
 but after this. we can sing as loud as we want
-i think im ok with that- #name Player
+i think im ok with that- #name Player #camera 5
 i didnt have much going on before the hive, if this is what it takes
-so be it.
-tell my friends i love them 
-tell em yourself #name Marya.
+so be it. #camera 0
+tell my friends i love them #end Door
+tell em yourself #name Marya. #camera 10
+#level Good
 ->END
 === failure1 ===
 that is enough. #name Desolation #camera 8
