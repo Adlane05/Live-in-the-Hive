@@ -125,6 +125,41 @@ public class DialogueManager : MonoBehaviour
             string[] parameters = parts.Skip(1).ToArray();
             switch (prefix)
             {
+                case "end":
+                {
+                    if(parameters[0] == "desolation"){
+                        EndingController.Instance.Desolation.SetActive(false);
+                        goodSound.Play();
+                    } if(parameters[0] == "Marya"){
+                        EndingController.Instance.Marya.SetActive(true);
+                        badSound.Play();
+                    }
+                    if(parameters[0] == "Shabloing1"){
+                        EndingController.Instance.Shabloing1.SetActive(true);
+                        goodSound.Play();
+                    } 
+                    if(parameters[0] == "Shabloing2"){
+                        EndingController.Instance.Shabloing2.SetActive(true);
+                        goodSound.Play();
+                    }
+                    if(parameters[0] == "Shabloing3"){
+                        EndingController.Instance.Shabloing3.SetActive(true);
+                        goodSound.Play();
+                    }
+                    if(parameters[0] == "Shabloings"){
+                        EndingController.Instance.Shabloings.SetActive(true);
+                        goodSound.Play();
+                    }
+                    if(parameters[0] == "spin"){
+                        EndingController.Instance.animator.SetTrigger("spin");
+                        goodSound.Play();
+                    }
+                    if(parameters[0] == "Door"){
+                        EndingController.Instance.DoorCover.SetActive(true);
+                        badSound.Play();
+                    }
+                    break;
+                }
                 case "door":
                 {
                     if(parameters[0] == "gone"){

@@ -1,6 +1,6 @@
 ﻿=== intro ===
-its time #name desolation #door gone #camera 0 
-we await #camera 1 15
+its time #name desolation #camera 0 
+we await #door gone #camera 1 15 
 WHAT THE FUCK IS THAT #name Shauna #camera 3
 the access center...we left the door open! #name Kristen #camera 2
 im sorry kids i tried i really did
@@ -39,6 +39,25 @@ how do you plead
 ->END
 
 === Shabloing ===
+fingers crossed this actually does something #name Player #camera 5
+Fool. #name Desolation
+no weapon.
+made by man. or nonbinary individual. can stop us.
+oh yeah? what about THIS #end Shabloing1 #remove Shabloing #camera 8 #name Player
+WHAT ON EARTH DO YOU THINK YOU'RE DOING #name Desolation #end Shabloing2 #remove Shabloing1
+putting an end to YOUR reign of terror...? #name Player
+YOU IDIOT. IT CAN NOT BE TRUSTED. #end Shabloing3 #remove Shabloing2 #name Desolation
+THIS.
+THIS INFECTION.
+IT IS WHAT PLAGUED THE LAST ITERATION.
+YOU HAVE DOOMED THEIR LAST HOPE.
+THIS CANT BE #end spin #camera 8
+WHAT HAVE YOU DONE #end Shabloings  #camera 2 2
+... #camera 3
+... #camera 4
+... #camera 11
+... #camera 10
+#level Shabloing
 ->END
 === friends ===
 this isnt fair. #name Player
@@ -145,9 +164,10 @@ OH GOD WHAT ARE YOU- DOIII
 i'm sorry but i am going to have to kick you out #name Marya
 IT CANT BE- #name Player
 oh trust me it can #name Marya
-Marya. Hive Admin. back just in time for the holiday special
-its you its really you! #name Player
-nice job taking over for me back there, sorry for slacking but i was busy haunting the narrative #name Marya
+Marya. Hive Admin. back just in time for the honice job distracting them with the power of friendshipl access is at its weakest when the doors are opemiday special
+its you its really you! #name Playernice job distracting them with the power of friendship
+nice job distracting them with the power of friendship, access is at its weakest when the doors are open
+sorry for slacking but i was busy haunting the narrative #name Marya
 your half up...#name Player
 what can i say, its monday #name Marya
 good job showing that bozo the true meaning of friendships
