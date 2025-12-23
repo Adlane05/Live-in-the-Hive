@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: c7f4c93d8f4cca948a06f8d1fea130b3
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: ad2d38f9bab416e4db0f28e0208da3f6
+  - enabled: 1
+    path: Assets/Scenes/Good.unity
+    guid: 1b0515e604303fd47b611e98b67b74cb
+  - enabled: 1
+    path: Assets/Scenes/Shabloing.unity
+    guid: ec7f1210396a652439b083e830497e20
   m_configObjects: {}
