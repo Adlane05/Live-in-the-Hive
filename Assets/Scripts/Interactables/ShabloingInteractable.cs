@@ -17,7 +17,7 @@ public class ShabloingInteractable : MonoBehaviour,  IInteractable
 
       public void Interact()
     {if(!DialogueManager.isInDialogue){
-        if(InformationManager.Instance.hasInteractedQinyi){
+     
         if (numberOfInteractions == 0)
         {
             DialogueManager.Instance.StartStory(inkJSONAsset, "visit1");
@@ -41,6 +41,6 @@ public class ShabloingInteractable : MonoBehaviour,  IInteractable
     }
 }
 
-}
+
 
 

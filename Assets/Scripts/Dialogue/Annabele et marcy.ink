@@ -32,33 +32,35 @@ and what may this astral being go by
 *[Clinthar]
 Clinthar lord of feasts and the hunt #name Player
 ~ player_name = "Clinthar lord of feasts and the hunt"
-eldritch ass name?? is your domain nature or something not appropriate to childrens ears- #name Mars #camera 5
+eldritch ass name?? 
+is your domain nature?
+ or something not appropriate to childrens ears- #name Mars #camera 5
 lol sounds like an AO3 tag list #name Annabel #camera 4
--> afterChoice
+-> visit3
 *quigley #name Player
 ~ player_name = "Quigley"
-quigley? that sounds familiar for some reason... 
-i think that loser with the weird karaoke obsession mentioned the name as someone who's even more of a loser, somehow #name Mars #camera 5
+quigley? 
+that sounds like something you'd name a cat. or a heavily autistic daughter #name Mars #camera 5
 that sounds like a fake name, i am intrigued like never before #name Annabel #camera 4
--> afterChoice
+-> visit3
 *The Antler Queen #name Player
  ~ player_name = "The Antler Queen"
 hm not sure about that one #name Annabel
-that sounds more like that wierd shauna girl's things #camera 1
+that sounds more like that wierd shauna girl's things
 identity fraud is not okay. #camera 3
 why would you even wanna copy her #name Mars #camera 5
 shes like a wierdo that keeps asking people to do karaoke
 she always does the same fucking song
 its not even friday
--> afterChoice
+-> visit3
 *Just Hornet #name Player
 ~ player_name = "Hornet"
 Hornet?? #name Mars
 like hornet from silksong hornet?? 
 omg???
--> afterChoice
+-> visit3
 -> END
 
-=== afterChoice ===
+=== visit3 ===
 well {player_name}. it was nice to meet you kind of #camera 3
 -> END

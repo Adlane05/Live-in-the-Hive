@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class counterController : MonoBehaviour
 {
     public static counterController Instance;
@@ -11,6 +13,7 @@ public class counterController : MonoBehaviour
     public float ScorePercent = 0.0f;
     public float Score = 0;
     public Text scoreText;
+    public bool SKIP;
 
     public void Awake()
     {
@@ -23,9 +26,15 @@ public class counterController : MonoBehaviour
             Instance = this;
         }
     }
+    public void Start(){
+        GameObject.Find("Inventory").SetActive(false);
+
+    }
     
     void Update()
     {   
+        if(SKIP == true){
+        SceneManager.LoadScene("End");}
         ScorePercent = (Score / 250) * 100;
                 timer+= Time.deltaTime;
                 scoreText.text = " Score : " +  Score + "";

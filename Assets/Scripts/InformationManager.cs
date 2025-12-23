@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class FriendshipStruct
@@ -9,7 +10,6 @@ public class FriendshipStruct
     public string name;
     public int friendshipScore;
     public string[] inkFilePath;  
-    public GameObject character;
     
 }
 public class InformationManager : MonoBehaviour
@@ -21,26 +21,42 @@ public class InformationManager : MonoBehaviour
     public List<InventoryItem> allItems = new List<InventoryItem>();
     public bool hasInteractedQinyi = false;
     public bool QinyiQuestDone;
-   void Awake()
+    public bool IsHelping;
+    public String PlayerName;
+
+    private Dictionary<string, CharResources> activeCharacters = new Dictionary<string, CharResources>();
+
+    void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
-
-
+        DontDestroyOnLoad(gameObject);
     }
 
-    public FriendshipStruct GetFriendshipStruct( string name)
-    
+    public FriendshipStruct GetFriendshipStruct(string name)
     {
-        name = name.Trim(' ');
-        foreach ( FriendshipStruct friend in friendshipDictionary)
-        {
-            if (friend.name == name)
-            {
-                return friend;
+        return friendshipDictionary.FirstOrDefault(f => f.name == name);
+    }
 
-            }
-        }
-        Debug.Log("Cant find struct");
-        return null;   
+    public void RegisterCharacter(string name, CharResources character)
+    {
+        activeCharacters[name] = character;
+    }
+
+    public void UnregisterCharacter(string name)
+    {
+        activeCharacters.Remove(name);
+    }
+
+    public CharResources GetCharacter(string name)
+    {
+        activeCharacters.TryGetValue(name, out var character);
+        return character;
     }
 }
+

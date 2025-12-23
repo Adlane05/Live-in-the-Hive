@@ -1,9 +1,14 @@
 ->ShaunaStart
 === ShaunaStart ===
-wanna do karaoke? #name Shauna #camera 3
-#shauna yes yes
+Hey loser #name Shauna #camera 3
+you're the fresh meat right?
+Kristen's new assistant?
+pretty big shoes to fill after...you know
+im known around thee parts for being an abseloute beast when it comes to karaoke
+wanna see if you could keep up with me? #play Happy Shauna
 *[hell yeah]
-    fuck yeah 
+    fuck yeah
+    youre about to eat your words
     #level karaokeDemo
     -> END
 *[no thanks]
@@ -18,17 +23,17 @@ what is your deal do you just not like fun?
     Ok Byeeeee!!!! #camera 0
     -> END
 *[no i love fun youre just boring]
-    fuck you you no longer have friendship points with me #play Angry Shauna
-    Ok Byeeeee!!!! #camera 0
+    i knew you'd turn out to be fucking boring #play Angry Shauna
+    bye gaywad! #camera 0
     -> END
 
 == visit2 ==
-fuck off #camera 3
-i dont wanna talk to you right now #camera 0
+what do you want now? #camera 3
+i thought you were too good to play karaoke with me #camera 0
 -> END
 == visit3 ==
-im sorry #camera 3
-can we please make up? #camera 0
+fine i suppose i could give you another chance #camera 3
+let's pretend its our first time #camera 0
 ->ShaunaStart
 -> END
 

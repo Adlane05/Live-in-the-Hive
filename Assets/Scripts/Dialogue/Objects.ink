@@ -217,3 +217,87 @@ only if you let it be #name Alan
 see you around furry spiderman #name Player
 not my name #name Alan
 ->END
+=== CrowdNoon1 ===
+how are they still waiting... #name Player #camera 4
+all this power. just to never be used.
+access center youll pay for this.... #camera 0
+->END
+=== lostOne1 ===
+OH GOD WHERE IS IT #camera 5 #name Bee #lost stop
+can i help you? #name Player
+have you sen a wierd looking cat anywhere? #name Bee
+i lost my SHABLOING and i cant find it, im skipping class for this
+my mom will KILL ME if i actually lost him
+will you help me find my SHABLOING?
+*[ofcourse!]
+oh my god thank you! #camera 0 #lost follow 
+hope you dont mind but im gonna be following you until we find it #lost yes #quest Help Bee find shabloing
+->END
+*[i have better things to do...]
+oh damnit i need to find it #camera 0 #lost patrol
+-> END
+=== lostOne2 ===
+i dont remember where i left it...#camera 5 #name Bee
+i think it was outside the hive somewhere? #camera 0
+->END
+=== lostOne3 ===
+this is kinda awkward...#camera 5 #name Bee
+i promise im not usually this clumsy
+wait no thats a lie i am #camera 0
+->END
+=== lostOne4 ===
+hi #camera 5 #name Bee
+uh..
+lets go find that shabloing! #camera 0 
+->END
+=== lostOne5 ===
+oh you found him! #camera 5 #name Bee
+thank you so much for your help! #remove Shabloing1
+gah i mustve put him there on accident when i took something from the free for all
+its this shelf where you can leave something or take something 
+its real by the way you can find it in the actual hive at B225 #name Marya
+im gonna go chill in the bee hive again see you there! #name Bee #camera 0 #lost home# #lost no #quest do karaoke
+->END
+=== lostOneShabloing ===
+woah you have your own shabloing? #name Bee #camera 5
+yeah i found him in the walls, pretty cool right? #name Player
+if only you had three you'd be able to put a stop to access... #name Bee
+hm... this might be for the better
+#pickup Shabloing1
+Bee?? what are you doing?? #name Player
+you just need one more. then this can all come to an end. #name Bee
+make Marya proud.
+->END
+=== lostOneShabloing1 ===
+were counting on you. #name Bee #camera 5
+if you wish to put a stop to this, find the third shabloing. shauna might know something..
+ask her after finishing karaoke
+you got this dude #camera 0
+->END
+=== lostOneNoShabloing ===
+hi again! #name bee #camera 5
+thanks for your help really i dont know what i wouldve done without you
+youre a pretty cool assistant
+kristen picked right
+youll fit right in here i bet everyone already likes you
+it sucks e only have one shabloing though. 
+if we had more we could make some real change..
+-> END
+=== lostOneNoShabloing1 ===
+see you around! #name Bee
+-> END
+
+=== artboard1 ===
+art event huh? #name Player #camera 18
+who is this marya...
+seems fun. not like im doing anything else today #camera 0
+->END
+
+=== Door1 ===
+the access center office... scary #name Player #camera 19
+so this is the place all those guys outside wanna be in?
+intriguing...
+->END 
+=== Door2 ===
+wouldnt wanna be on the bad end of whoever works in there... #name Player 
+->END

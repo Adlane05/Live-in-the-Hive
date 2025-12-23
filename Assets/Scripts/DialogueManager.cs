@@ -125,6 +125,18 @@ public class DialogueManager : MonoBehaviour
             string[] parameters = parts.Skip(1).ToArray();
             switch (prefix)
             {
+                case "door":
+                {
+                    if(parameters[0] == "gone"){
+                        GameObject.Find("Access Door").SetActive(false);
+                        badSound.Play();
+                    }
+                    if(parameters[0] == "back"){
+                        GameObject.Find("Access Door").SetActive(true);
+                        badSound.Play();
+                    }
+                    break;
+                }
                  case "pickup":
                 {
                      InventoryItem item = InformationManager.Instance.allItems.Find(i => i.itemId == parameters[0]);
@@ -147,8 +159,11 @@ public class DialogueManager : MonoBehaviour
                 }
                 case "kristen":
                 if(parameters[0] == "away"){
-                    FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct("Kristen");
-                    friendStruct.character.GetComponent<Animator>().SetTrigger("sendAway");
+                    var character = InformationManager.Instance.GetCharacter("Kristen");
+                if (character != null)
+                {
+                    character.GetAnimator().SetTrigger("sendAway");
+                }
                     Invoke("changeKristen", 3);
                 }
                 if(parameters[0] == "there"){
@@ -161,6 +176,29 @@ public class DialogueManager : MonoBehaviour
                 if(parameters[0] == "talk"){
                     KristenController.Instance.meshRenderer.material = KristenController.Instance.winKristen;
 
+                }
+                break;
+                case "lost":
+                if(parameters[0] == "stop"){
+                    NPCAI.Instance.OnPlayerInteract();
+                }
+                if(parameters[0] == "home"){
+                    NPCAI.Instance.OnItemGiven();
+
+                }
+                if(parameters[0] == "patrol"){
+                    NPCAI.Instance.BackToPatrol();
+
+                }
+                if(parameters[0] == "follow"){
+                    NPCAI.Instance.StartFollowing();
+
+                }
+                if(parameters[0] == "yes"){
+                    InformationManager.Instance.IsHelping = true;
+                }
+                if(parameters[0] == "no"){
+                    InformationManager.Instance.IsHelping = false;
                 }
                 break;
                 case "music":
@@ -178,29 +216,30 @@ public class DialogueManager : MonoBehaviour
                         nametag.text = parameters[0];
                     break;
                 case "quest":
-                    if (parameters.Length >= 1)
-                        questText.text = string.Join(" ", parameters);
-                    break;
+                if (questText == null)
+                questText = GameObject.Find("QuestText").GetComponent<Text>();
+
+                questText.text = string.Join(" ", parameters);
+                break;
                 case "play":
                 {
-                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(parameters[1]);
-                        if (friendStruct != null)
-                        {
-                            friendStruct.character.GetComponent<Animator>().SetTrigger(parameters[0]);
-                        }
-                    
+                    var character = InformationManager.Instance.GetCharacter(parameters[1]);
+                    if (character != null)
+                    {
+                    character.GetAnimator().SetTrigger(parameters[0]);
+                    }            
                         break;
                 }
                 
                 case "playsad":
-                {       
-                        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct("Qinyi");
-                        if (friendStruct != null)
+                {               
+                        var character = InformationManager.Instance.GetCharacter("Qinyi");
+                        if (character != null)
                         {
                             if(parameters[0] == "true")
-                            friendStruct.character.GetComponent<Animator>().SetBool("sad", true );
+                            character.GetAnimator().SetBool("sad", true );
                         if(parameters[0] == "false")
-                            friendStruct.character.GetComponent<Animator>().SetBool("sad", false );
+                            character.GetAnimator().SetBool("sad", false );
                         }
                     
                         break;
@@ -227,9 +266,9 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         message.text = "";
-        FriendshipStruct friendStruct = InformationManager.Instance.GetFriendshipStruct(nametag.text);
-        if( friendStruct != null){
-                friendStruct.character.GetComponent<Animator>().SetBool("playTalk", true);
+        var character = InformationManager.Instance.GetCharacter(nametag.text);
+        if( character != null){
+                character.GetAnimator().SetBool("playTalk", true);
         }
         
         foreach (char letter in sentence.ToCharArray())
@@ -238,9 +277,9 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
 
-        if( friendStruct != null)
+        if( character != null)
         {
-            friendStruct.character.GetComponent<Animator>().SetBool("playTalk", false);
+            character.GetAnimator().SetBool("playTalk", false);
         }
     }
     IEnumerator ShowChoices()

@@ -5,11 +5,39 @@ using UnityEngine;
 
 public class CharResources : MonoBehaviour
 {
-    public FriendshipStruct info;
-    public string name;
+    public string characterName;
+    private Animator animator;
 
-    public void Start()
+    void Awake()
     {
-        info = InformationManager.Instance.GetFriendshipStruct(name);
+        animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        if (InformationManager.Instance != null)
+        {
+            InformationManager.Instance.RegisterCharacter(characterName, this);
+        }
+        else
+        {
+            Debug.LogError(
+                $"InformationManager not found when registering {characterName}",
+                this
+            );
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (InformationManager.Instance != null)
+        {
+            InformationManager.Instance.UnregisterCharacter(characterName);
+        }
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
     }
 }

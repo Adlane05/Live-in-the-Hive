@@ -49,7 +49,7 @@ me? #name Player #camera 11
 I love characters who go into a place, see something's wrong with and just fix it up
 its really badass and seeing them be so...whats the word
 its not heroic its-
-PROACTIVE #name Mars #camera 4 2
+PROACTIVE #name Mars #camera 5 2
 THANK YOU #name Player #camera 11
 yeah i like when they feel productive like they can produce actual change its pretty neat
 i really like that actually it fits in with our world #name Vella #camera 12 
@@ -219,3 +219,8 @@ go make friends #camera 0
 im sure Shauna would love to talk to you over there #name Kristen 
 go on help its your task for the day
 ->END
+
+=== visit1 ===
+Bee's Shabloing! #name Player
+ill be taking this!
+-> END

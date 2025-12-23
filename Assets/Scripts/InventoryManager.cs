@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     public Image[] inventorySlots;        // 3 UI Images
     public Sprite emptySlotSprite;         // Default empty sprite
 
-    private List<InventoryItem> inventory = new List<InventoryItem>();
+    public List<InventoryItem> inventory = new List<InventoryItem>();
     public static InventoryManager Instance;
 
     void Start()
