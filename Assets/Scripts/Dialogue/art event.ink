@@ -169,12 +169,12 @@ See ya around! #name Dragon #camera 15
 Yea dude #name Hound #camera 14
 ->END
 === WafaEtElla1 ===
-Meow meow #name Wafa #camera 16
-Meow meow meow meow meow meow meow meow meow meow #name Ella #camera 17
-Meow meow meow? #name Wafa #camera 16
+Meow meow #name Kitty #camera 16
+Meow meow meow meow meow meow meow meow meow meow #name Lesbian2 #camera 17
+Meow meow meow? #name Kitty #camera 16
 Meow meow meow!
-Meow....meow? #name Ella #camera 17
-Meow... #name Wafa #camera 16
+Meow....meow? #name Lesbian2 #camera 17
+Meow... #name Kitty #camera 16
 Lesbian to lesbian communication... #name Player #camera 0
 ->END
 === Kristen1 ===
